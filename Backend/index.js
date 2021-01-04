@@ -30,7 +30,7 @@ app.use('/api', prestamo_routes);
 app.use('/api', usuario_routes);
 
 
-mongoose.connect('mongodb+srv://danielbustos86:daniel123@cluster0-wxfwq.mongodb.net/UBB202001?retryWrites=true&w=majority', (err, res) => {
+mongoose.connect('mongodb+srv://kusu:kusu@test.uobco.mongodb.net/testing?retryWrites=true&w=majority', (err, res) => {
 
     if(err){
         console.log("NO CONECTA")

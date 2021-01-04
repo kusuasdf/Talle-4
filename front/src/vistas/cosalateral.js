@@ -7,11 +7,9 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-import Autor from './Autor'
-import Libro from './libro';
 import Listar from './listar';
 import NuevoUsuario from './nuevoUsuario';
-import CosaLateral from './cosalateral';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -48,11 +46,11 @@ function a11yProps(index) {
 const useStyles = makeStyles((theme) => ({
   root: {
     flexGrow: 1,
-    backgroundColor: theme.palette.background.paper,
+    backgroundColor: theme.palette.action.hover
   },
 }));
 
-export default function MenuTabs() {
+export default function CosaLateral() {
   const classes = useStyles();
   const [value, setValue] = React.useState(0);
 
@@ -64,28 +62,18 @@ export default function MenuTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
-          <Tab label="Autor" {...a11yProps(1)} />
-          <Tab label="Lista de Usuarios separado" {...a11yProps(2)} />
-          <Tab label="Nuevo usuario separado" {...a11yProps(3)} />
-          <Tab label="taller4" {...a11yProps(4)} />
+          <Tab label="Lista de Usuarios" {...a11yProps(0)} />
+          <Tab label="Nuevo usuario" {...a11yProps(1)} />
         </Tabs>
       </AppBar>
+
       <TabPanel value={value} index={0}>
-    <Libro/>
-      </TabPanel>
-      <TabPanel value={value} index={1}>
-        <Autor/>
-      </TabPanel>
-      <TabPanel value={value} index={2}>
         <Listar/>
       </TabPanel>
-      <TabPanel value={value} index={3}>
+      <TabPanel value={value} index={1}>
        <NuevoUsuario/>
       </TabPanel>
-      <TabPanel value={value} index={4}>
-        <CosaLateral/>
-      </TabPanel>
+
     </div>
   );
 }
