@@ -12,6 +12,8 @@ import Libro from './libro';
 import Listar from './listar';
 import NuevoUsuario from './nuevoUsuario';
 import CosaLateral from './menutaller4';
+import Prestamo from './prestamo';
+
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
@@ -64,9 +66,9 @@ export default function MenuTabs() {
     <div className={classes.root}>
       <AppBar position="static">
         <Tabs value={value} onChange={handleChange} aria-label="simple tabs example">
-          <Tab label="Item One" {...a11yProps(0)} />
+          <Tab label="Libros" {...a11yProps(0)} />
           <Tab label="Autor" {...a11yProps(1)} />
-          <Tab label="Lista de Usuarios separado" {...a11yProps(2)} />
+          <Tab label="Prestamos" {...a11yProps(2)} />
           <Tab label="Nuevo usuario separado" {...a11yProps(3)} />
           <Tab label="taller4" {...a11yProps(4)} />
         </Tabs>
@@ -78,7 +80,7 @@ export default function MenuTabs() {
         <Autor/>
       </TabPanel>
       <TabPanel value={value} index={2}>
-        <Listar/>
+        <Prestamo/>
       </TabPanel>
       <TabPanel value={value} index={3}>
        <NuevoUsuario/>
