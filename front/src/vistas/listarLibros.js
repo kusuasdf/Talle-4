@@ -41,13 +41,16 @@ const useStyles = makeStyles({
 
 export default function Listar() {
   const classes = useStyles();
-  const [usuarios, setUsuarios] = useState([])
+  const [libros, setLibros] = useState([])
+
   useEffect(()=>{
-    cargarUsuario();
-  },[])
-  const cargarUsuario = async () => {
-    const { data } = await axios.get("http://localhost:9000/api/usuario");
-    setUsuarios(data.data);
+    cargarLibros();
+  })
+  
+  const cargarLibros = async () => {
+    const { data } = await axios.get("http://localhost:9000/api/libro");
+    setLibros(data.libroConAutor);
+    console.log(libros);
   };
   return (
     
@@ -55,17 +58,19 @@ export default function Listar() {
       <Table className={classes.table} aria-label="customized table">
     <TableHead>
           <TableRow>
-            <StyledTableCell>Mail</StyledTableCell>
-            <StyledTableCell align="center">Password</StyledTableCell>
+            <StyledTableCell>Nombre</StyledTableCell>
+            <StyledTableCell align="center">Código</StyledTableCell>
+            <StyledTableCell align="center">Autor</StyledTableCell>
           </TableRow>
         </TableHead> 
         <TableBody>
-          {usuarios.map((row) => (
+          {libros.map((row) => (
             <StyledTableRow key={row._id}>
               <StyledTableCell component="th" scope="row">
-                {row.mail}
+                {row.nombre}
               </StyledTableCell>
-              <StyledTableCell align="center">{row.pass}</StyledTableCell>
+              <StyledTableCell align="center">{row.codigo}</StyledTableCell>
+              <StyledTableCell align="center">{row.autor.nombre}</StyledTableCell>
             </StyledTableRow>
           ))}
         </TableBody> 

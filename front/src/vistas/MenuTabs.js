@@ -11,7 +11,7 @@ import Autor from './Autor'
 import Libro from './libro';
 import Listar from './listar';
 import NuevoUsuario from './nuevoUsuario';
-import CosaLateral from './cosalateral';
+import CosaLateral from './menutaller4';
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
 
