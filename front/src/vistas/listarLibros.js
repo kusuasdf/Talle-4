@@ -50,7 +50,6 @@ export default function Listar() {
   const cargarLibros = async () => {
     const { data } = await axios.get("http://localhost:9000/api/libro");
     setLibros(data.libroConAutor);
-    console.log(libros);
   };
   return (
     

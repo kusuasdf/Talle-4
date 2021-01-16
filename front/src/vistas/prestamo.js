@@ -56,7 +56,6 @@ export default function NuevoLibro(){
     const [accion,setAccion]= useState("Registrar Prestamo")
 
     useEffect(() => {
-      console.log("useeffecto aaa")
       cargarLibro()
       cargarPersona()
     },[]);

@@ -54,7 +54,6 @@ export default function NuevoLibro(){
     const [accion,setAccion]= useState("Registrar libro")
 
     useEffect(() => {
-      console.log("useeffecto aaa")
       cargarAutores()
     },[]);
 
