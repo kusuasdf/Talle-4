@@ -102,6 +102,7 @@ export default function NuevoLibro(){
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
+            Registrar Libro
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={2}>

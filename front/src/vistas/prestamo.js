@@ -16,7 +16,6 @@ import axios from 'axios';
 import MaterialDatatable from "material-datatable";
 import Select from '@material-ui/core/Select';
 import MenuItem from '@material-ui/core/MenuItem';
-import Libro from './listarLibros';
 
 
 const useStyles = makeStyles((theme) => ({
@@ -116,6 +115,7 @@ export default function NuevoLibro(){
         <CssBaseline />
         <div className={classes.paper}>
           <Typography component="h1" variant="h5">
+              Prestamo de Libros
           </Typography>
           <form className={classes.form} onSubmit={handleSubmit(onSubmit)}>
             <Grid container spacing={2}>
